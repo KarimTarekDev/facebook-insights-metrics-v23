@@ -1,6 +1,24 @@
 # Facebook Insights Metrics v23 MCP Server
 
-A Model Context Protocol (MCP) server that exposes Facebook Graph API v23.0 Insights metrics to any LLM via MCP tools and a single JSON resource.
+[![npm version](https://badge.fury.io/js/facebook-insights-metrics-v23.svg)](https://badge.fury.io/js/facebook-insights-metrics-v23)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen)](https://nodejs.org/)
+
+A comprehensive Model Context Protocol (MCP) server that exposes Facebook Graph API v23.0 Insights metrics to any LLM via MCP tools and resources. This server provides access to 120+ Facebook metrics with intelligent search capabilities and real-time data updates.
+
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [MCP Tools](#mcp-tools)
+- [MCP Resources](#mcp-resources)
+- [Metrics Categories](#metrics-categories)
+- [API Reference](#api-reference)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -16,19 +34,73 @@ A Model Context Protocol (MCP) server that exposes Facebook Graph API v23.0 Insi
 
 - Node.js v22.0.0 or higher
 - npm or yarn
+- An MCP-compatible client (Claude Desktop, Cline, etc.)
 
 ### Installation
 
+#### Option 1: NPM (Recommended)
+
 ```bash
-# Clone or download the project
+# Install globally
+npm install -g facebook-insights-metrics-v23
+
+# Or install locally
+npm install facebook-insights-metrics-v23
+```
+
+#### Option 2: From Source
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/facebook-insights-metrics-v23.git
 cd facebook-insights-metrics-v23
 
 # Install dependencies
 npm install
 
+# Build the project
+npm run build
+
 # Generate initial metrics data
 npm run refresh
 ```
+
+## Configuration
+
+### MCP Client Configuration
+
+Add the server to your MCP client configuration:
+
+#### Claude Desktop (claude_desktop_config.json)
+
+```json
+{
+  "mcpServers": {
+    "facebook-insights-metrics-v23": {
+      "command": "node",
+      "args": ["/path/to/facebook-insights-metrics-v23/dist/server.js"]
+    }
+  }
+}
+```
+
+#### Cline
+
+```json
+{
+  "mcpServers": {
+    "facebook-insights-metrics-v23": {
+      "command": "node",
+      "args": ["/path/to/facebook-insights-metrics-v23/dist/server.js"]
+    }
+  }
+}
+```
+
+### Environment Variables
+
+- `METRICS_DATA_PATH`: Custom path to metrics.json file (optional)
+- `DEBUG`: Enable debug logging (optional)
 
 ### Quick Fix for "No parameters" Error
 
@@ -37,19 +109,6 @@ If you're getting "No parameters" error, run this:
 ```bash
 # Complete setup and test
 npm install && npm run build && npm run refresh && npm run test
-```
-
-Then use this mcp.json configuration:
-
-```json
-{
-  "mcpServers": {
-    "facebook-insights-metrics-v23": {
-      "command": "node",
-      "args": ["/full/path/to/facebook-insights-metrics-v23/dist/server.js"]
-    }
-  }
-}
 ```
 
 ### Running the Server
@@ -333,24 +392,75 @@ This MCP server is based on the official Facebook Graph API v23.0 Insights docum
 DEBUG=* npm run dev
 ```
 
-## License
+## Development
 
-MIT License - see LICENSE file for details.
+### Project Structure
+
+```
+facebook-insights-metrics-v23/
+├── src/                          # TypeScript source code
+│   ├── server.ts                 # MCP server implementation
+│   ├── schema.ts                 # Zod schemas and types
+│   ├── loader.ts                 # Metrics data loader
+│   ├── search.ts                 # Fuzzy search implementation
+│   ├── parser.ts                 # Markdown parser
+│   └── data/
+│       └── metrics.json          # Generated metrics data
+├── scripts/
+│   └── refresh.ts                # Refresh script
+├── .github/                      # GitHub templates
+├── dist/                         # Compiled JavaScript
+├── FACEBOOK_API_V23_METRICS_REFERENCE.md  # Source markdown
+└── test-mcp.js                   # Test script
+```
+
+### Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build TypeScript to JavaScript
+npm run refresh      # Parse Markdown and update metrics.json
+npm start            # Start production server
+npm test             # Run MCP server tests
+npm run test:quick   # Quick MCP test
+```
+
+### Adding New Metrics
+
+1. Update `FACEBOOK_API_V23_METRICS_REFERENCE.md` with new metrics
+2. Run `npm run refresh` to parse and update metrics
+3. Test the new metrics with `npm test`
 
 ## Contributing
 
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Quick Start for Contributors
+
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
 3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+4. Run tests: `npm test`
+5. Commit your changes: `git commit -m 'Add amazing feature'`
+6. Push to the branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
 
 ## Support
 
-For issues and questions:
-- Check the troubleshooting section
-- Review the Facebook Graph API documentation
-- Open an issue on the project repository
+- 📖 [Documentation](README.md)
+- 🐛 [Report Issues](https://github.com/your-username/facebook-insights-metrics-v23/issues)
+- 💬 [Discussions](https://github.com/your-username/facebook-insights-metrics-v23/discussions)
+- 📧 [Contact](mailto:your-email@example.com)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Facebook Graph API team for the comprehensive metrics documentation
+- Model Context Protocol team for the MCP specification
+- All contributors who help improve this project
 
 ---
 

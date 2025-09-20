@@ -14,9 +14,17 @@
     "test": "node test-mcp.js",
     "test:quick": "echo '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/list\", \"params\": {}}' | node dist/server.js"
   },
-  "keywords": ["mcp", "facebook", "insights", "metrics", "api", "v23"],
-  "author": "Claude Code",
+  "keywords": ["mcp", "facebook", "insights", "metrics", "api", "v23", "graph-api", "analytics", "social-media"],
+  "author": "Facebook Insights Metrics MCP Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/facebook-insights-metrics-v23.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/facebook-insights-metrics-v23/issues"
+  },
+  "homepage": "https://github.com/your-username/facebook-insights-metrics-v23#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.1",
     "fuse.js": "^7.1.0",

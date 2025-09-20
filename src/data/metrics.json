@@ -1,6 +1,6 @@
 {
   "version": "v23.0.unknown",
-  "updatedAt": "2025-08-30T21:00:00.000Z",
+  "updatedAt": "2025-09-18T21:00:00.000Z",
   "metrics": [
     {
       "name": "page_tab_views_login_top_unique",
@@ -52,134 +52,51 @@
       "deprecated": false
     },
     {
-      "name": "page_total_actions",
+      "name": "page_cta_clicks_logged_in_total",
       "level": "page",
-      "description": "Total number of actions taken on Page",
+      "description": "Total CTA clicks by logged-in users",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "All Page interactions",
+      "notes": "All CTA types",
       "tags": [
+        "clicks",
         "age"
       ],
       "deprecated": false
     },
     {
-      "name": "page_post_engagements*",
+      "name": "page_cta_clicks_logged_in_unique",
       "level": "page",
-      "description": "Number of times people engaged with posts through reactions, comments, shares",
+      "description": "Unique CTA clicks by logged-in users",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "\"Like\" reactions include both \"like\" and \"care\"",
-      "tags": [
-        "engagement",
-        "reactions",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_daily_follows*",
-      "level": "page",
-      "description": "Number of times Page was followed in selected period",
-      "periods": [
-        "day"
-      ],
-      "dataType": "Integer",
-      "notes": "Total follows count",
-      "tags": [
-        "follows",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_daily_follows_unique*",
-      "level": "page",
-      "description": "Unique Accounts Center accounts that followed Page",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Unique users",
       "tags": [
         "unique",
-        "follows",
+        "clicks",
         "age"
       ],
       "deprecated": false
     },
     {
-      "name": "page_daily_unfollows_unique*",
+      "name": "page_follows",
       "level": "page",
-      "description": "Unique Accounts Center accounts that unfollowed Page",
+      "description": "Number of new Page follows",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "unique",
-        "follows",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_lifetime_engaged_followers_unique*",
-      "level": "page",
-      "description": "Followers who watched videos 1+ min or interacted in past 14 days",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Engagement-based follower metric",
-      "tags": [
-        "video",
-        "unique",
-        "follows",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fan_adds_by_paid_non_paid_unique",
-      "level": "page",
-      "description": "Page likes attributed to paid vs organic content",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Breakdown by paid/organic",
-      "tags": [
-        "paid",
-        "organic",
-        "unique",
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_follows*",
-      "level": "page",
-      "description": "Total followers (follows minus unfollows over lifetime)",
-      "periods": [
-        "day"
-      ],
-      "dataType": "Integer",
-      "notes": "Calculated lifetime metric",
+      "notes": "New followers",
       "tags": [
         "follows",
         "age"
@@ -187,16 +104,49 @@
       "deprecated": false
     },
     {
-      "name": "page_impressions*",
+      "name": "page_unfollows",
       "level": "page",
-      "description": "Times any Page content entered a person's screen",
+      "description": "Number of Page unfollows",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Includes posts, stories, ads",
+      "notes": "Lost followers",
+      "tags": [
+        "follows",
+        "age"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "page_engaged_users",
+      "level": "page",
+      "description": "Number of people who engaged with Page",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "Any engagement",
+      "tags": [
+        "age"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "page_impressions",
+      "level": "page",
+      "description": "Total Page impressions",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "All impressions",
       "tags": [
         "impressions",
         "age"
@@ -204,7 +154,7 @@
       "deprecated": false
     },
     {
-      "name": "page_impressions_unique*",
+      "name": "page_impressions_unique",
       "level": "page",
       "description": "Number of people who had Page content enter their screen",
       "periods": [
@@ -222,16 +172,16 @@
       "deprecated": false
     },
     {
-      "name": "page_impressions_paid*",
+      "name": "page_impressions_paid",
       "level": "page",
-      "description": "Impressions through paid distribution",
+      "description": "Paid Page impressions",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Ad-attributed impressions",
+      "notes": "Promoted content",
       "tags": [
         "impressions",
         "paid",
@@ -240,277 +190,53 @@
       "deprecated": false
     },
     {
-      "name": "page_impressions_paid_unique*",
+      "name": "page_impressions_organic",
       "level": "page",
-      "description": "Unique people who saw paid Page content",
+      "description": "Organic Page impressions",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "paid",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_impressions_viral*",
-      "level": "page",
-      "description": "Impressions with social information attached",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Content shown with friend context",
-      "tags": [
-        "impressions",
-        "viral",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_impressions_viral_unique*",
-      "level": "page",
-      "description": "Unique people who saw viral Page content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_impressions_nonviral*",
-      "level": "page",
-      "description": "Impressions without social information",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Direct Page content views",
-      "tags": [
-        "impressions",
-        "viral",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_impressions_nonviral_unique*",
-      "level": "page",
-      "description": "Unique people who saw non-viral Page content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions*",
-      "level": "page",
-      "description": "Times Page posts entered a person's screen",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Post-specific impressions",
-      "tags": [
-        "impressions",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_unique*",
-      "level": "page",
-      "description": "Unique people who saw Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_paid*",
-      "level": "page",
-      "description": "Post impressions through paid distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Paid post promotion",
-      "tags": [
-        "impressions",
-        "paid",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_paid_unique*",
-      "level": "page",
-      "description": "Unique people who saw paid post content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "paid",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_organic_unique*",
-      "level": "page",
-      "description": "Unique people who saw organic post content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Non-promoted content",
       "tags": [
         "impressions",
         "organic",
-        "unique",
         "age"
       ],
       "deprecated": false
     },
     {
-      "name": "page_posts_served_impressions_organic_unique",
+      "name": "page_posts_impressions",
       "level": "page",
-      "description": "Unique people served organic post impressions",
+      "description": "Total Page posts impressions",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Server-counted metric",
+      "notes": "All posts",
       "tags": [
         "impressions",
-        "organic",
-        "unique",
         "age"
       ],
       "deprecated": false
     },
     {
-      "name": "page_posts_impressions_viral*",
+      "name": "page_posts_impressions_unique",
       "level": "page",
-      "description": "Post impressions with social information",
+      "description": "Unique Page posts impressions",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Viral post reach",
+      "notes": "Unique people",
       "tags": [
         "impressions",
-        "viral",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_viral_unique*",
-      "level": "page",
-      "description": "Unique people who saw viral post content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
-        "unique",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_nonviral*",
-      "level": "page",
-      "description": "Post impressions without social information",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Direct post views",
-      "tags": [
-        "impressions",
-        "viral",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_posts_impressions_nonviral_unique*",
-      "level": "page",
-      "description": "Unique people who saw non-viral post content",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
         "unique",
         "age"
       ],
@@ -519,14 +245,14 @@
     {
       "name": "page_video_views",
       "level": "video",
-      "description": "Times Page videos played for 3+ seconds",
+      "description": "Total Page video views",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Minimum 3-second threshold",
+      "notes": "All video views",
       "tags": [
         "video",
         "views",
@@ -537,55 +263,17 @@
     {
       "name": "page_video_views_unique",
       "level": "video",
-      "description": "Unique people who viewed Page videos 3+ seconds",
+      "description": "Unique Page video views",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Unique viewers",
       "tags": [
         "video",
         "unique",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_paid",
-      "level": "video",
-      "description": "Video views through paid distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Ad-attributed video views",
-      "tags": [
-        "video",
-        "paid",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_organic",
-      "level": "video",
-      "description": "Video views through organic distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Non-paid video views",
-      "tags": [
-        "video",
-        "organic",
         "views",
         "age"
       ],
@@ -594,329 +282,18 @@
     {
       "name": "page_video_views_autoplayed",
       "level": "video",
-      "description": "Video views that started automatically",
+      "description": "Autoplayed video views",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Autoplay-initiated views",
+      "notes": "Auto-played content",
       "tags": [
         "video",
         "views",
         "autoplay",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_click_to_play",
-      "level": "video",
-      "description": "Video views where user clicked play",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "User-initiated views",
-      "tags": [
-        "video",
-        "views",
-        "clicks",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_by_uploaded_hosted*",
-      "level": "video",
-      "description": "Video views by upload/hosted breakdown",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "JSON",
-      "notes": "Upload type breakdown",
-      "tags": [
-        "video",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_by_paid_non_paid",
-      "level": "video",
-      "description": "Video views by paid vs non-paid breakdown",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "JSON",
-      "notes": "Attribution breakdown",
-      "tags": [
-        "video",
-        "paid",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_repeat_views",
-      "level": "video",
-      "description": "Times videos were replayed",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Repeat engagement metric",
-      "tags": [
-        "video",
-        "views",
-        "repeat",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s",
-      "level": "video",
-      "description": "Videos watched to completion or 30+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Engagement completion metric",
-      "tags": [
-        "video",
-        "views",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_paid",
-      "level": "video",
-      "description": "30s+ video views through paid distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Paid completion metric",
-      "tags": [
-        "video",
-        "paid",
-        "views",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_organic",
-      "level": "video",
-      "description": "30s+ video views through organic distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Organic completion metric",
-      "tags": [
-        "video",
-        "organic",
-        "views",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_autoplayed",
-      "level": "video",
-      "description": "30s+ video views that started automatically",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Autoplay completion metric",
-      "tags": [
-        "video",
-        "views",
-        "completion",
-        "autoplay",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_click_to_play",
-      "level": "video",
-      "description": "30s+ video views where user clicked play",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "User-initiated completion",
-      "tags": [
-        "video",
-        "views",
-        "clicks",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_unique",
-      "level": "video",
-      "description": "Unique people who watched videos 30+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated completion metric",
-      "tags": [
-        "video",
-        "unique",
-        "views",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s_repeat_views",
-      "level": "video",
-      "description": "Times 30s+ views were repeated",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Repeat completion metric",
-      "tags": [
-        "video",
-        "views",
-        "completion",
-        "repeat",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_view_time",
-      "level": "video",
-      "description": "Total time videos were watched in milliseconds",
-      "periods": [
-        "day"
-      ],
-      "dataType": "Integer",
-      "notes": "Aggregate watch time",
-      "tags": [
-        "video",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_10s",
-      "level": "video",
-      "description": "Videos played for 10+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED** above Graph API v18",
-      "tags": [
-        "video",
-        "views",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_fans",
-      "level": "page",
-      "description": "Total number of people who like Page",
-      "periods": [
-        "day"
-      ],
-      "dataType": "Integer",
-      "notes": "Current like count",
-      "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_locale",
-      "level": "page",
-      "description": "Page likes broken down by locale",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Language/region breakdown",
-      "tags": [
-        "fans",
-        "locale",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_city",
-      "level": "page",
-      "description": "Page likes broken down by city",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Geographic distribution",
-      "tags": [
-        "fans",
-        "city",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_country",
-      "level": "page",
-      "description": "Page likes broken down by country",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Country-level analytics",
-      "tags": [
-        "fans",
-        "country",
         "age"
       ],
       "deprecated": false
@@ -924,33 +301,15 @@
     {
       "name": "page_fan_adds",
       "level": "page",
-      "description": "Number of new Page likes",
+      "description": "New Page fans",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "New likes acquired",
+      "notes": "New followers",
       "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fan_adds_unique",
-      "level": "page",
-      "description": "Unique new Page likes",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "unique",
         "fans",
         "age"
       ],
@@ -959,14 +318,14 @@
     {
       "name": "page_fan_removes",
       "level": "page",
-      "description": "Number of Page unlikes",
+      "description": "Removed Page fans",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Likes lost",
+      "notes": "Unfollows",
       "tags": [
         "fans",
         "age"
@@ -974,138 +333,7 @@
       "deprecated": false
     },
     {
-      "name": "page_fan_removes_unique*",
-      "level": "page",
-      "description": "Unique Page unlikes",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "unique",
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_by_like_source",
-      "level": "page",
-      "description": "Page likes broken down by source",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Like source breakdown",
-      "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_by_like_source_unique",
-      "level": "page",
-      "description": "Unique Page likes by source",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Estimated source metric",
-      "tags": [
-        "unique",
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_views_total*",
-      "level": "page",
-      "description": "Number of times Page profile has been viewed",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Profile page visits",
-      "tags": [
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_stories_by_action_type",
-      "level": "page",
-      "description": "Stories created about Page",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "JSON",
-      "notes": "Story type breakdown",
-      "tags": [
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_negative_feedback_by_type",
-      "level": "page",
-      "description": "Negative feedback actions taken on Page",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "JSON",
-      "notes": "Negative action breakdown",
-      "tags": [
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_consumptions_by_consumption_type",
-      "level": "page",
-      "description": "Page content consumptions by type",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "JSON",
-      "notes": "**DEPRECATED** - Consumption breakdown",
-      "tags": [
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_tab_views_login_top_unique",
-      "level": "page",
-      "description": "Logged-in users who viewed Page tabs",
-      "periods": [
-        "day",
-        "week"
-      ],
-      "dataType": "Integer",
-      "notes": "By tab type breakdown",
-      "tags": [
-        "unique",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_views_total",
+      "name": "page_views",
       "level": "page",
       "description": "Total Page profile views",
       "periods": [
@@ -1114,7 +342,7 @@
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Profile page visits",
+      "notes": "Profile visits",
       "tags": [
         "views",
         "age"
@@ -1122,53 +350,17 @@
       "deprecated": false
     },
     {
-      "name": "page_consumptions*",
+      "name": "page_views_unique",
       "level": "page",
-      "description": "Times people clicked on Page content",
+      "description": "Unique Page profile views",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "**DEPRECATED** as of Nov 1, 2023",
+      "notes": "Unique visitors",
       "tags": [
-        "clicks",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_video_views",
-      "level": "video",
-      "description": "Times Page videos played for 3+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Minimum 3-second threshold",
-      "tags": [
-        "video",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_unique",
-      "level": "video",
-      "description": "Unique people who viewed Page videos 3+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "video",
         "unique",
         "views",
         "age"
@@ -1176,390 +368,64 @@
       "deprecated": false
     },
     {
-      "name": "page_video_views_paid",
-      "level": "video",
-      "description": "Video views through paid distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Ad-attributed video views",
-      "tags": [
-        "video",
-        "paid",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_organic",
-      "level": "video",
-      "description": "Video views through organic distribution",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Non-paid video views",
-      "tags": [
-        "video",
-        "organic",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_autoplayed",
-      "level": "video",
-      "description": "Video views that started automatically",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Autoplay-initiated views",
-      "tags": [
-        "video",
-        "views",
-        "autoplay",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_views_clicked_to_play",
-      "level": "video",
-      "description": "Video views where user clicked play",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "User-initiated views",
-      "tags": [
-        "video",
-        "views",
-        "clicks",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_complete_views_30s",
-      "level": "video",
-      "description": "Videos watched to completion or 30+ seconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Engagement completion metric",
-      "tags": [
-        "video",
-        "views",
-        "completion",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_video_view_time",
-      "level": "video",
-      "description": "Total time videos were watched in milliseconds",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Aggregate watch time",
-      "tags": [
-        "video",
-        "views",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans",
+      "name": "page_stories",
       "level": "page",
-      "description": "Total number of people who like Page",
-      "periods": [
-        "day"
-      ],
-      "dataType": "Integer",
-      "notes": "Current like count",
-      "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_locale",
-      "level": "page",
-      "description": "Page likes broken down by locale",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Language/region breakdown",
-      "tags": [
-        "fans",
-        "locale",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_city",
-      "level": "page",
-      "description": "Page likes broken down by city",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Geographic distribution",
-      "tags": [
-        "fans",
-        "city",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fans_country",
-      "level": "page",
-      "description": "Page likes broken down by country",
-      "periods": [
-        "day"
-      ],
-      "dataType": "JSON",
-      "notes": "Country-level analytics",
-      "tags": [
-        "fans",
-        "country",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fan_adds",
-      "level": "page",
-      "description": "Number of new Page likes",
+      "description": "Page stories created",
       "periods": [
         "day",
         "week",
         "days_28"
       ],
       "dataType": "Integer",
-      "notes": "New likes acquired",
-      "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_fan_removes",
-      "level": "page",
-      "description": "Number of Page unlikes",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "Likes lost",
-      "tags": [
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "page_actions_post_reactions_like_total",
-      "level": "page",
-      "description": "Total \"like\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED** - use engagement metrics",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_actions_post_reactions_love_total",
-      "level": "page",
-      "description": "Total \"love\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED**",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_actions_post_reactions_wow_total",
-      "level": "page",
-      "description": "Total \"wow\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED**",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_actions_post_reactions_haha_total",
-      "level": "page",
-      "description": "Total \"haha\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED**",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_actions_post_reactions_sorry_total",
-      "level": "page",
-      "description": "Total \"sorry\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED**",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "page_actions_post_reactions_anger_total",
-      "level": "page",
-      "description": "Total \"anger\" reactions on Page posts",
-      "periods": [
-        "day",
-        "week",
-        "days_28"
-      ],
-      "dataType": "Integer",
-      "notes": "**DEPRECATED**",
-      "tags": [
-        "reactions",
-        "age"
-      ],
-      "deprecated": true
-    },
-    {
-      "name": "post_activity_by_action_type",
-      "level": "page",
-      "description": "Stories created about Page posts",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "JSON",
-      "notes": "Breakdown by story type",
+      "notes": "Story posts",
       "tags": [
         "age"
       ],
       "deprecated": false
     },
     {
-      "name": "content_monetization_earnings",
-      "level": "monetization",
-      "description": "Estimated earnings from content monetization",
+      "name": "page_activity",
+      "level": "page",
+      "description": "Page activity score",
       "periods": [
         "day",
         "week",
-        "month",
-        "lifetime"
+        "days_28"
       ],
-      "dataType": "Float",
-      "notes": "Content revenue",
+      "dataType": "Integer",
+      "notes": "Engagement metric",
       "tags": [
-        "earnings",
-        "monetization"
+        "age"
       ],
       "deprecated": false
     },
     {
-      "name": "monetization_approximate_earnings",
-      "level": "monetization",
-      "description": "Approximate earnings from various monetization sources",
-      "periods": [
-        "day",
-        "week",
-        "month",
-        "lifetime"
-      ],
-      "dataType": "Float",
-      "notes": "Total revenue estimate",
-      "tags": [
-        "earnings",
-        "monetization"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions*",
+      "name": "post_impressions",
       "level": "post",
-      "description": "Times post entered a person's screen",
+      "description": "Total post impressions",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Post-specific reach",
+      "notes": "All impressions",
       "tags": [
         "impressions"
       ],
       "deprecated": false
     },
     {
-      "name": "post_impressions_unique*",
+      "name": "post_impressions_unique",
       "level": "post",
-      "description": "People who saw the post",
+      "description": "Unique post impressions",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Unique people",
       "tags": [
         "impressions",
         "unique"
@@ -1567,14 +433,16 @@
       "deprecated": false
     },
     {
-      "name": "post_impressions_paid*",
+      "name": "post_impressions_paid",
       "level": "post",
-      "description": "Post impressions through paid distribution",
+      "description": "Paid post impressions",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Boosted/promoted posts",
+      "notes": "Promoted posts",
       "tags": [
         "impressions",
         "paid"
@@ -1582,62 +450,16 @@
       "deprecated": false
     },
     {
-      "name": "post_impressions_paid_unique*",
+      "name": "post_impressions_organic",
       "level": "post",
-      "description": "Unique people who saw paid post",
+      "description": "Organic post impressions",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "paid",
-        "unique"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_fan*",
-      "level": "post",
-      "description": "Post impressions from Page fans",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Fan audience reach",
-      "tags": [
-        "impressions",
-        "fans",
-        "age"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_fan_unique*",
-      "level": "post",
-      "description": "Unique fans who saw the post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "unique",
-        "fans"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_organic*",
-      "level": "post",
-      "description": "Post impressions through organic distribution",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Natural post reach",
+      "notes": "Non-promoted posts",
       "tags": [
         "impressions",
         "organic"
@@ -1645,146 +467,64 @@
       "deprecated": false
     },
     {
-      "name": "post_impressions_organic_unique*",
+      "name": "post_engaged_users",
       "level": "post",
-      "description": "Unique people who saw organic post",
+      "description": "People who engaged with post",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Any engagement",
       "tags": [
-        "impressions",
-        "organic",
-        "unique"
+        "age"
       ],
       "deprecated": false
     },
     {
-      "name": "post_impressions_viral*",
+      "name": "post_clicks",
       "level": "post",
-      "description": "Post impressions with social information",
+      "description": "Total post clicks",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Shared/viral reach",
-      "tags": [
-        "impressions",
-        "viral"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_viral_unique*",
-      "level": "post",
-      "description": "Unique people who saw viral post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
-        "unique"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_nonviral*",
-      "level": "post",
-      "description": "Post impressions without social information",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Direct post views",
-      "tags": [
-        "impressions",
-        "viral"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_impressions_nonviral_unique*",
-      "level": "post",
-      "description": "Unique people who saw non-viral post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "Estimated metric",
-      "tags": [
-        "impressions",
-        "viral",
-        "unique"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_activity_by_action_type*",
-      "level": "post",
-      "description": "Stories created about the post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "JSON",
-      "notes": "Breakdown by action type",
-      "tags": [],
-      "deprecated": false
-    },
-    {
-      "name": "post_activity_by_action_type_unique*",
-      "level": "post",
-      "description": "Unique people creating stories about post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "JSON",
-      "notes": "Estimated metric",
-      "tags": [
-        "unique"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_clicks*",
-      "level": "post",
-      "description": "Total clicks on the post",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "Integer",
-      "notes": "All post interactions",
+      "notes": "All clicks",
       "tags": [
         "clicks"
       ],
       "deprecated": false
     },
     {
-      "name": "post_clicks_by_type*",
+      "name": "post_reactions_by_type_total",
       "level": "post",
-      "description": "Post clicks broken down by type",
+      "description": "Total reactions by type",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "JSON",
-      "notes": "Click type breakdown",
+      "notes": "Reaction breakdown",
       "tags": [
-        "clicks"
+        "reactions"
       ],
       "deprecated": false
     },
     {
       "name": "post_reactions_like_total",
       "level": "post",
-      "description": "Total \"like\" reactions on the post",
+      "description": "Total likes",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Like reaction count",
+      "notes": "Like reactions",
       "tags": [
         "reactions"
       ],
@@ -1793,12 +533,14 @@
     {
       "name": "post_reactions_love_total",
       "level": "post",
-      "description": "Total \"love\" reactions on the post",
+      "description": "Total loves",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Love reaction count",
+      "notes": "Love reactions",
       "tags": [
         "reactions"
       ],
@@ -1807,12 +549,14 @@
     {
       "name": "post_reactions_wow_total",
       "level": "post",
-      "description": "Total \"wow\" reactions on the post",
+      "description": "Total wows",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Wow reaction count",
+      "notes": "Wow reactions",
       "tags": [
         "reactions"
       ],
@@ -1821,12 +565,14 @@
     {
       "name": "post_reactions_haha_total",
       "level": "post",
-      "description": "Total \"haha\" reactions on the post",
+      "description": "Total hahas",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Haha reaction count",
+      "notes": "Haha reactions",
       "tags": [
         "reactions"
       ],
@@ -1835,12 +581,14 @@
     {
       "name": "post_reactions_sorry_total",
       "level": "post",
-      "description": "Total \"sorry\" reactions on the post",
+      "description": "Total sorrys",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Sorry reaction count",
+      "notes": "Sorry reactions",
       "tags": [
         "reactions"
       ],
@@ -1849,26 +597,14 @@
     {
       "name": "post_reactions_anger_total",
       "level": "post",
-      "description": "Total \"anger\" reactions on the post",
+      "description": "Total angers",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Anger reaction count",
-      "tags": [
-        "reactions"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_reactions_by_type_total",
-      "level": "post",
-      "description": "All reactions broken down by type",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "JSON",
-      "notes": "Complete reaction breakdown",
+      "notes": "Anger reactions",
       "tags": [
         "reactions"
       ],
@@ -1877,12 +613,14 @@
     {
       "name": "post_video_views",
       "level": "post",
-      "description": "Times post video played for 3+ seconds",
+      "description": "Post video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Video engagement metric",
+      "notes": "Video views",
       "tags": [
         "video",
         "views"
@@ -1892,12 +630,14 @@
     {
       "name": "post_video_views_unique",
       "level": "post",
-      "description": "Unique people who viewed post video",
+      "description": "Unique post video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Estimated metric",
+      "notes": "Unique viewers",
       "tags": [
         "video",
         "unique",
@@ -1906,14 +646,105 @@
       "deprecated": false
     },
     {
-      "name": "post_video_views_organic",
+      "name": "post_video_views_autoplayed",
       "level": "post",
-      "description": "Organic post video views",
+      "description": "Autoplayed post video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Natural video reach",
+      "notes": "Auto-played",
+      "tags": [
+        "video",
+        "views",
+        "autoplay"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views",
+      "level": "video",
+      "description": "Total video views",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "All views",
+      "tags": [
+        "video",
+        "views"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_unique",
+      "level": "video",
+      "description": "Unique video views",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "Unique viewers",
+      "tags": [
+        "video",
+        "unique",
+        "views"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_autoplayed",
+      "level": "video",
+      "description": "Autoplayed video views",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "Auto-played",
+      "tags": [
+        "video",
+        "views",
+        "autoplay"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_clicked_to_play",
+      "level": "video",
+      "description": "Clicked-to-play video views",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "User-initiated",
+      "tags": [
+        "video",
+        "views",
+        "clicks"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_organic",
+      "level": "video",
+      "description": "Organic video views",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Integer",
+      "notes": "Non-promoted",
       "tags": [
         "video",
         "organic",
@@ -1922,14 +753,16 @@
       "deprecated": false
     },
     {
-      "name": "post_video_views_paid",
-      "level": "post",
-      "description": "Paid post video views",
+      "name": "video_views_paid",
+      "level": "video",
+      "description": "Paid video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Boosted video views",
+      "notes": "Promoted content",
       "tags": [
         "video",
         "paid",
@@ -1938,14 +771,16 @@
       "deprecated": false
     },
     {
-      "name": "post_video_complete_views_30s",
-      "level": "post",
-      "description": "Post videos watched 30+ seconds",
+      "name": "video_complete_views",
+      "level": "video",
+      "description": "Complete video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Long-form engagement",
+      "notes": "100% completion",
       "tags": [
         "video",
         "views",
@@ -1954,14 +789,16 @@
       "deprecated": false
     },
     {
-      "name": "post_video_view_time",
-      "level": "post",
-      "description": "Total time post video was watched",
+      "name": "video_30_sec_views",
+      "level": "video",
+      "description": "30-second video views",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Integer",
-      "notes": "Aggregate watch time",
+      "notes": "30+ seconds",
       "tags": [
         "video",
         "views"
@@ -1969,61 +806,68 @@
       "deprecated": false
     },
     {
-      "name": "post_video_retention_graph",
-      "level": "post",
-      "description": "Video retention over time",
+      "name": "video_avg_time_watched",
+      "level": "video",
+      "description": "Average time watched",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "Float",
+      "notes": "In seconds",
+      "tags": [
+        "video",
+        "age"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_retention_curve",
+      "level": "video",
+      "description": "Video retention curve",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "JSON",
-      "notes": "Time-based retention data",
+      "notes": "Retention data",
       "tags": [
         "video"
       ],
       "deprecated": false
     },
     {
-      "name": "post_video_view_time_by_age_bucket_and_gender",
-      "level": "post",
-      "description": "Video watch time by demographic",
+      "name": "video_views_by_age_gender",
+      "level": "video",
+      "description": "Video views by age and gender",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "JSON",
-      "notes": "Age and gender breakdown",
+      "notes": "Demographic breakdown",
       "tags": [
         "video",
         "views",
-        "demographics",
         "age",
         "gender"
       ],
       "deprecated": false
     },
     {
-      "name": "post_video_view_time_by_region_id",
-      "level": "post",
-      "description": "Video watch time by region",
+      "name": "video_views_by_country",
+      "level": "video",
+      "description": "Video views by country",
       "periods": [
-        "lifetime"
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "JSON",
-      "notes": "Regional breakdown",
-      "tags": [
-        "video",
-        "views"
-      ],
-      "deprecated": false
-    },
-    {
-      "name": "post_video_view_time_by_country_id",
-      "level": "post",
-      "description": "Video watch time by country",
-      "periods": [
-        "lifetime"
-      ],
-      "dataType": "JSON",
-      "notes": "Country breakdown",
+      "notes": "Geographic breakdown",
       "tags": [
         "video",
         "views",
@@ -2032,17 +876,101 @@
       "deprecated": false
     },
     {
-      "name": "content_monetization_earnings",
-      "level": "monetization",
-      "description": "Estimated earnings from content monetization",
+      "name": "video_views_by_locale",
+      "level": "video",
+      "description": "Video views by locale",
       "periods": [
-        "lifetime",
-        "day"
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "JSON",
+      "notes": "Language breakdown",
+      "tags": [
+        "video",
+        "views",
+        "locale"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_by_distribution_type",
+      "level": "video",
+      "description": "Video views by distribution",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "JSON",
+      "notes": "Organic vs paid",
+      "tags": [
+        "video",
+        "views"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "video_views_by_placement",
+      "level": "video",
+      "description": "Video views by placement",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "JSON",
+      "notes": "Feed, stories, etc.",
+      "tags": [
+        "video",
+        "views"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "content_creator_earnings",
+      "level": "monetization",
+      "description": "Creator earnings",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
       ],
       "dataType": "Float",
-      "notes": "Content creator revenue",
+      "notes": "USD earnings",
       "tags": [
-        "earnings",
+        "earnings"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "content_creator_earnings_breakdown",
+      "level": "monetization",
+      "description": "Earnings breakdown",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "JSON",
+      "notes": "Detailed breakdown",
+      "tags": [
+        "earnings"
+      ],
+      "deprecated": false
+    },
+    {
+      "name": "content_monetization_metrics",
+      "level": "monetization",
+      "description": "Monetization metrics",
+      "periods": [
+        "day",
+        "week",
+        "days_28"
+      ],
+      "dataType": "JSON",
+      "notes": "Various metrics",
+      "tags": [
         "monetization"
       ],
       "deprecated": false
