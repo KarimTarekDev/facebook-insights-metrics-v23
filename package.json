@@ -1,0 +1,38 @@
+{
+  "name": "facebook-insights-metrics-v23",
+  "version": "1.0.0",
+  "description": "MCP server for Facebook Graph API v23.0 Insights metrics",
+  "main": "dist/server.js",
+  "bin": {
+    "facebook-insights-metrics-v23": "dist/server.js"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "refresh": "tsx scripts/refresh.ts",
+    "start": "node dist/server.js",
+    "test": "node test-mcp.js",
+    "test:quick": "echo '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/list\", \"params\": {}}' | node dist/server.js"
+  },
+  "keywords": ["mcp", "facebook", "insights", "metrics", "api", "v23"],
+  "author": "Claude Code",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.1",
+    "fuse.js": "^7.1.0",
+    "zod": "^4.1.9",
+    "unified": "^11.0.5",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "readme": "Facebook Insights Metrics v23 MCP Server\n\nA Model Context Protocol (MCP) server that exposes Facebook Graph API v23.0 Insights metrics to any LLM via MCP tools and a single JSON resource.\n\n## Quick Start\n\n1. Install dependencies:\n   ```bash\n   npm install\n   ```\n\n2. Generate initial metrics data:\n   ```bash\n   npm run refresh\n   ```\n\n3. Start the MCP server:\n   ```bash\n   npm run dev\n   ```\n\n## Features\n\n- 121+ Facebook Graph API v23.0 Insights metrics\n- Fast fuzzy search with Fuse.js\n- Dynamic updates from Markdown reference\n- Full TypeScript support with Zod validation\n- MCP compatible with any LLM client\n\n## MCP Tools\n\n- `metrics.list` - List all metrics\n- `metrics.get` - Get specific metric details\n- `metrics.search` - Fuzzy search metrics\n- `metrics.refreshNow` - Refresh from Markdown\n\n## MCP Resources\n\n- `mcp://facebook-insights-metrics-v23/metrics.json` - Complete metrics data\n\nSee README.md for full documentation."
+}
