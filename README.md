@@ -52,7 +52,7 @@ npm install facebook-insights-metrics-v23
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/facebook-insights-metrics-v23.git
+git clone https://github.com/KarimTarekDev/facebook-insights-metrics-v23.git
 cd facebook-insights-metrics-v23
 
 # Install dependencies
@@ -448,9 +448,9 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ## Support
 
 - 📖 [Documentation](README.md)
-- 🐛 [Report Issues](https://github.com/your-username/facebook-insights-metrics-v23/issues)
-- 💬 [Discussions](https://github.com/your-username/facebook-insights-metrics-v23/discussions)
-- 📧 [Contact](mailto:your-email@example.com)
+- 🐛 [Report Issues](https://github.com/KarimTarekDev/facebook-insights-metrics-v23/issues)
+- 💬 [Discussions](https://github.com/KarimTarekDev/facebook-insights-metrics-v23/discussions)
+- 📧 [Contact](mailto:karimtarekdev@gmail.com)
 
 ## License
 

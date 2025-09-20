@@ -19,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/facebook-insights-metrics-v23.git"
+    "url": "https://github.com/KarimTarekDev/facebook-insights-metrics-v23.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/facebook-insights-metrics-v23/issues"
+    "url": "https://github.com/KarimTarekDev/facebook-insights-metrics-v23/issues"
   },
-  "homepage": "https://github.com/your-username/facebook-insights-metrics-v23#readme",
+  "homepage": "https://github.com/KarimTarekDev/facebook-insights-metrics-v23#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.1",
     "fuse.js": "^7.1.0",

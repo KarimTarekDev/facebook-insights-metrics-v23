@@ -1,0 +1,39 @@
+# Source files (only include compiled dist/)
+src/
+scripts/
+
+# Development files
+test-mcp.js
+tsconfig.json
+
+# Documentation (keep README.md)
+RELEASE_NOTES.md
+CHANGELOG.md
+CONTRIBUTING.md
+SECURITY.md
+
+# GitHub files
+.github/
+
+# Git files
+.gitignore
+.gitattributes
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env*
+
+# Temporary files
+tmp/
+temp/
